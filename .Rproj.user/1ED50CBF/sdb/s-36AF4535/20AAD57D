@@ -1,0 +1,28 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1467094055135.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "20AAD57D",
+    "lastKnownWriteTime" : 4671166848,
+    "last_content_update" : 1467094055135,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "xqxb62c9bn",
+        "caption" : "terror_by_groups",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=terror_by_groups&cache_key=xqxb62c9bn",
+        "displayedObservations" : "300",
+        "environment" : "",
+        "object" : "terror_by_groups",
+        "totalObservations" : "300",
+        "variables" : "3"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}
