@@ -1,6 +1,6 @@
 # 2015 update to GTD
 
-setwd("~/stories/gtd_2015/")
+# setwd("~/stories/gtd_2015/")
 
 require(dplyr)
 require(readr)
@@ -96,15 +96,6 @@ us_attacks <- lethal_attacks %>%
   select(date, city, gname, nkill, summary) %>% 
   rename(Date = date, City = city, `Number killed` = nkill, `Group responsible` = gname)
 
-# Country breakdown
-data_by_country <- raw_new_data %>% 
-  group_by(iyear, country_txt) %>% 
-  summarize(attacks = n(), 
-            fatalities = sum(nkill, na.rm = TRUE)) %>% 
-  ungroup() %>% 
-  arrange(desc(attacks)) %>% 
-  filter(iyear == 2015)
-
 # Worst groups
 terror_by_groups <- raw_new_data %>% 
   filter(iyear == 2015) %>% 
@@ -116,6 +107,10 @@ terror_by_groups <- raw_new_data %>%
 
 terror_by_groups %>% select(-attacks) %>% 
   head(11) %>% write_csv("deadliest_terror_groups.csv")
+
+############################################
+# ---------------- NOT USED ----------------
+############################################
 
 # Lone wolf attacks
 lone_wolf <- raw_new_data %>% 
@@ -132,6 +127,14 @@ raw_new_data %>%
   spread(attacktype1_txt, incidents)
 
 # By country
+data_by_country <- raw_new_data %>% 
+  group_by(iyear, country_txt) %>% 
+  summarize(attacks = n(), 
+            fatalities = sum(nkill, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  arrange(desc(attacks)) %>% 
+  filter(iyear == 2015)
+
 raw_new_data %>% 
   group_by(iyear, country_txt) %>% 
   summarize(incidents = n()) %>% 
